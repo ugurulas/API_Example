@@ -8,16 +8,14 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class deleteBooking extends BaseClass {
-    @Test(description = "This test will work only if you set a valid Token in the Credentials Class")
+    @Test
     public void deleteIsSuccessful() throws IOException {
 
         HttpDelete request = new HttpDelete(BASE_ENDPOINT);
 
         request.setHeader(HttpHeaders.AUTHORIZATION, "token " + Credentials.TOKEN);
         response = client.execute(request);
-
         int actualStatusCode = response.getStatusLine().getStatusCode();
-
         Assert.assertEquals(actualStatusCode, 204);
     }
 }

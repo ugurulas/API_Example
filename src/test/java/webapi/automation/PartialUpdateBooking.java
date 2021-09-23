@@ -18,7 +18,7 @@ public class PartialUpdateBooking extends BaseClass{
             .method("PATCH", body)
             .addHeader("Content-Type", "application/json")
             .addHeader("Accept", "application/json")
-            .addHeader("Cookie", "token=d80deb495c57e4b")
+            .addHeader("Cookie", TOKEN)
             .build();
     Response response = client.newCall(request).execute();
 
